@@ -1,18 +1,25 @@
+# Polimorfismos con funciones
+
 class Honda:
     def segmento(self):
-        tipo = "Hatchback"
+        print("Hatchback")
     def pintura(self):
-        color = "Gris"
+        print("Gris")
 
 class Toyota:
     def segmento(self):
-        tipo = "Sedan"
+        print("Sedan")
     def pintura(self):
-        color = "Rojo"
+        print("Rojo")
 
 def poli(objecto):
     objecto.segmento()
     objecto.pintura()
 
 nuevo_honda = Honda()
-poli(objecto=nuevo_honda)
+poli(nuevo_honda)
+
+nuevo_toyota = Toyota()
+poli(nuevo_toyota)
+
+#Polimorfismo con metodos
