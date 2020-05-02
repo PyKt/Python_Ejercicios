@@ -58,7 +58,7 @@ pares, impares = separar_listas(lista)
 print(pares)
 print(impares)
 
-"""      Las  funciones integradas son las que se reutilizan  en si mismas  """
+"""  Las  funciones integradas son las que se reutilizan  en si mismas  """
 
 def conteo(segundos):
     segundos -= 1

@@ -2,7 +2,8 @@ Tarea = {'GNU':'Linux', 'Kotlin': 'Code'}
 
 print(Tarea)
 
-diCompra = {'Carnes':'Pollo' 'Cerdo', 'Lacteos': 'Queso' 'Mantequilla'}
+diCompra = {'Carnes':'Pollo' 'Cerdo', 
+'Lacteos': 'Queso' 'Mantequilla'}
 print(diCompra)
 
 ### Hacemos un recorrido del diccionario con el siclo for

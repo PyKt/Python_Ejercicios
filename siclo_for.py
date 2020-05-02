@@ -13,13 +13,11 @@ for recorrido, i in enumerate (lista):
 for i in range(10):
     print(i)
 
-
 frase = str(input("Ingrese la frase: "))
 diccionario = ('aeiouAEIOUqwhjkdkzxd1234567890')
 conter = 0 
 for i in frase:
     if diccionario in diccionario:
         conter = conter +1
-
 
 print("Numero de vocales: ", conter)

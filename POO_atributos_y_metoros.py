@@ -1,6 +1,6 @@
 import time
 """
-Los atribustos son referencias a las variable internar y las funciones internas
+Los atribustos son referencias a las variable interna y las funciones internas
 """
 class Autos:# Auto es el metodo.
     pass
@@ -39,7 +39,7 @@ print(marca.Rojo)
 
 """
 Ahora vamos a usar los argumentos en las instanciaciones.
-El uso de self lo que hace es hacer la referencia a la clase creada.
+El uso de self hace la referencia a la clase creada.
 """
 
 class Fabricar_coche:
@@ -56,7 +56,7 @@ class Fabricar_coche:
 a1 = Fabricar_coche(5, "Honda", 4)
 
 """
-Ahora aremos uso del metodo especial __str__ para convertir a cadena los datos
+Ahora haremos uso del metodo especial __str__ para convertir a cadena los datos
 """
 
 class Fabricar_coche:
@@ -70,7 +70,7 @@ class Fabricar_coche:
         print("Finalizacion")
         
     def __str__(self):
-        return "{} fue construido en el tiempo {} y cuenta con {} ruedas".format(self.marca, self.tiempo,self.ruedas)
+        return f"{self.marca} fue construido en el tiempo {self.tiempo} y cuenta con {self.ruedas} ruedas"
     def __len__(self):
         return self.ruedas
 
