@@ -15,9 +15,10 @@ for i in diCompra:
 
 ### Agregamos la lista en el diccionario y la unimos
 
-diccionario1 = {'Codigos':'Python','Java' 'OS':['Linux', 'Android']}
+diccionario1 = {'Codigos':'Pyton','Java' 'OS':['Linux', 'Android']}
 print(diccionario1)
 print(diccionario1['Codigos'])## Hacemos la consulta por medio del encabesado o la llave(key)
 
 for key in diccionario1:
     print(key, diccionario1['Codigos'])
+    

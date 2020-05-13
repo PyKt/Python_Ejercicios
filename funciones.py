@@ -1,8 +1,9 @@
-import subprocess
-
 def tabla():
-    for x in range(11):
-        print("7 * {} = {}".format(x,x*7))
+    for x in range(1,11):
+        print(f"7 * {x} = {x*7}")
+
+while tabla in range(1,11):
+    tabla
 
 """tabla()# de esta manera llamamos a la funcion         """
 """                                                      """

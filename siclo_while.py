@@ -36,7 +36,21 @@ while dato:
         subprocess.call(['speedtest-cli'])
     
     elif dato == 0:
-        exit('Saliendo del miniprograma...')
+        print('Saliendo del miniprograma...')
     
     else:
       print('Numeral equivocado')
+
+
+contador = 1
+muestra = str(0)
+while contador <= 100:
+    muestra = muestra + "," +str(contador)
+    contador +=1
+
+print(muestra)
+numero = int(input())
+tabla_multiplicar =1 
+while tabla_multiplicar <= 10:
+    print(f"{numero} x {tabla_multiplicar} = {numero*tabla_multiplicar}")
+    tabla_multiplicar +=1

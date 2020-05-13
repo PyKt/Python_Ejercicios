@@ -21,3 +21,28 @@ for i in frase:
         conter = conter +1
 
 print("Numero de vocales: ", conter)
+
+multiplo = int(input('ingresa el valor'))
+for calc in range(1,11):
+    print(f"{multiplo} x {calc} = {multiplo*calc} ")
+
+
+for numero in range(1,61):
+    cuadrado = numero*numero
+    print(f"El cuadrado de {numero}es de{cuadrado }")
+    print(cuadrado)
+
+def matematicas():
+    while True:
+        str(input("""INDIQUE EL TIPO DE OPERADOR MATEMATICO:
+        [S]Para sumar
+        [M]Para multiplicar
+        [D]Para dividir
+        [R]Para substraer"""))
+        operador_uno = float()
+        operador_dos = float()
+        calc = str()
+
+
+
+
