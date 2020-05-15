@@ -10,7 +10,6 @@ import pathlib
 """
 Generador automatico de contraseñas.
 """
-stringLength = ''
 
 
 def get_random_alphaNumeric_string(stringLength=8):
@@ -23,10 +22,9 @@ for i in get_random_alphaNumeric_string(13):
     print(i)
 
 print("########Numeros al azar###########")
-for i in range(0, 3):
-    i = random.randint(1, 100)
-    print(i)
-stringLength = ''
+for rs in range(0, 3):
+    rs = random.randint(1, 100)
+    print(rs)
 
 """
 Multi threading
