@@ -6,9 +6,10 @@ import time
 import datetime
 
 fecha = datetime.datetime.now()
-personalizada = fecha.strftime("%H-%M")
+personalizado = fecha.strftime("El %D a las - %H:%M:%S\n\n")
 
 arch = open("Resultado.txt", "a+")
+arch.write(f"Creado {personalizado}")
 arch.write("#####Resultado Nacional#####\n")
 for lot in range(3):
 
