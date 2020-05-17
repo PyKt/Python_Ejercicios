@@ -1,4 +1,3 @@
-import pathlib
 import random
 from io import open
 import string
@@ -9,7 +8,7 @@ Manejo de ficheros en python
 """
 #Abrimos el archivo
 ruta = str(pathlib.Path().absolute()) + "/factura.txt"
-archivo = open(ruta, "a+")
+archivo = open(ruta, "a+\n")
 
 
 
