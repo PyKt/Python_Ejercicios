@@ -12,9 +12,9 @@ class loteria:
 
     def juego(self):
         fecha = datetime.datetime.now()
-        personalizado = fecha.strftime("El %D a las - %H:%M:%S\n\n")
+        fechaArchivo = fecha.strftime("El %D a las - %H:%M:%S\n\n")
         arch = open("Resultado.txt", "a+")
-        arch.write(f"Creado {personalizado}")
+        arch.write(f"Creado {fechaArchivo}")
         arch.write("#####Resultado Nacional#####\n")
 
 
