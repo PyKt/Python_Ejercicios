@@ -5,27 +5,33 @@ import string
 import time
 import datetime
 
+class loteria:
+    juego = True
+    def __init__(self):
+        pass
 
-def juego():
-    fecha = datetime.datetime.now()
-    personalizado = fecha.strftime("El %D a las - %H:%M:%S\n\n")
-    arch = open("Resultado.txt", "a+")
-    arch.write(f"Creado {personalizado}")
-    arch.write("#####Resultado Nacional#####\n")
-
-    
-    for lot in range(3):
-        lot = random.randint(1,100)
-        arch = open(f"Resultado.txt", "a+")
-        arch.write(f"{lot}\n")
-        print(lot)
-
-    arch.write("#####Resultado Leidsa#####\n")
-    
-    for led in range(7):
-        led = random.randint(1,38)
+    def juego(self):
+        fecha = datetime.datetime.now()
+        personalizado = fecha.strftime("El %D a las - %H:%M:%S\n\n")
         arch = open("Resultado.txt", "a+")
-        arch.write(f"{led}\n")
-        print(led)
-    arch.closed
-salida = juego()
+        arch.write(f"Creado {personalizado}")
+        arch.write("#####Resultado Nacional#####\n")
+
+
+        for lot in range(3):
+            lot = random.randint(1,100)
+            arch = open(f"Resultado.txt", "a+")
+            arch.write(f"{lot}\n")
+            print(lot)
+
+        arch.write("#####Resultado Leidsa#####\n")
+        
+        for led in range(7):
+            led = random.randint(1,38)
+            arch = open("Resultado.txt", "a+")
+            arch.write(f"{led}\n")
+            print(led)
+        arch.closed
+
+Resultado = loteria()
+Resultado.juego()
