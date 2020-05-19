@@ -6,14 +6,14 @@ import time
 import datetime
 
 
-fecha = datetime.datetime.now()
-personalizado = fecha.strftime("El %D a las - %H:%M:%S\n\n")
-
-arch = open("Resultado.txt", "a+")
-arch.write(f"Creado {personalizado}")
-arch.write("#####Resultado Nacional#####\n")
-
 def juego():
+    fecha = datetime.datetime.now()
+    personalizado = fecha.strftime("El %D a las - %H:%M:%S\n\n")
+    arch = open("Resultado.txt", "a+")
+    arch.write(f"Creado {personalizado}")
+    arch.write("#####Resultado Nacional#####\n")
+
+    
     for lot in range(3):
         lot = random.randint(1,100)
         arch = open(f"Resultado.txt", "a+")
