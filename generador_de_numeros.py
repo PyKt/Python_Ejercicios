@@ -5,6 +5,7 @@ import string
 import time
 import datetime
 
+
 fecha = datetime.datetime.now()
 personalizado = fecha.strftime("El %D a las - %H:%M:%S\n\n")
 
