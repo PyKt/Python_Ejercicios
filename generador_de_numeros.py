@@ -6,7 +6,6 @@ import time
 import datetime
 
 class loteria:
-    juego = True
     def __init__(self):
         pass
 
