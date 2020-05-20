@@ -1,13 +1,14 @@
 print("Elije la opcion")
-inicio = str(input("Escribe inicio para iniciar el programa: "))
 
-while(inicio == "inicio"):
+while True:
     print("""Elija la opcion correcta
     elije el numero de la opcion
     1 - Quiero que me saludes.
     2 - Deseo la tabla de multiplicar.
     3 - Salir del programa""")
+    
     opcion = int(input())
+
     if opcion == 1:
         print("Hola usuario")
     elif opcion == 2:
@@ -17,6 +18,7 @@ while(inicio == "inicio"):
     elif opcion == 3:
         print("Saliendo del programa")
         exit("saliendo...")
+
     else:
-        print("No reconosto la opcion.")
+        raise ValueError ("Rango incorrecto")
     
