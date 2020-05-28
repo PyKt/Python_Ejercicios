@@ -1,60 +1,73 @@
-import random
 import string
-import subprocess
-import threading
-import time
-import datetime
-import os
+from io import open
+import modulocoche
 
-"""
-Proceso de borrado autostart    
-"""
+class Automovil:
+    color = "gris"
+    tipo = "hatchback"
+    modelo = "fit"
+    marca = "Honda"
+    puertas = 5
+    cilindraje = 1.5
+    salida = 2014
 
-print("los numeros al azar")
+    def __init__(self, color,tipo,modelo,marca,salida,puertas,cilindraje):
 
-lista = [12, 21, 55, 18, 91]
-lista.sort()
-print(lista)
+        self.salida = salida
+        self.cilindraje = cilindraje
+        self.puertas = puertas
+        self.color = color
+        self.tipo = tipo
+        self.marca = marca
+        self.modelo = modelo
 
-"""
-lista = [12,18,11]
-lista.extend([12,21,11])
-La(lista)
-print(lista)
+    def set_salida(self, salida):
+        self.salida = salida
 
-for i in enumerate(lista):
-    print(i)
-"""
+    def set_modelo(self,modelo):
+        self.modelo = modelo
 
+    def set_tipo(self, tipo):
+        self.tipo = tipo
 
-def print_hello():
-    for i in range(4):
-        time.sleep(0.5)
-        print("Hello")
+    def set_color(self,color):
+        self.color = color
 
+    def set_puertas(self,puertas):
+        self.puertas = puertas
 
-def print_hi():
-    for i in range(4):
-        time.sleep(0.7)
-        print("Hi")
+    def set_cilindraje(self,cilindraje):
+        self.cilindraje = cilindraje
+    
+    def set_marca(self, marca):
+        self.marca = marca
+    
+    def get_salida(self):
+        return self.salida
+    
+    def get_modelo(self):
+        return self.modelo
 
+    def get_tipo(self):
+        return self.tipo
 
-t1 = threading.Thread(target=print_hello)
-t2 = threading.Thread(target=print_hi)
-t1.start()
-t2.start()
+    def get_color(self):
+        return self.color
 
-print("########Numeros al azar###########")
-for i in range(0, 3):
-    i = random.randint(1, 100)
-    print(i)
-stringLength = ''
+    def get_puertas(self):
+        return self.puertas
 
-def get_random_alphaNumeric_string(stringLength=8):
-    lettersAndDigits = string.ascii_letters + string.digits
-    return ''.join((random.choice(lettersAndDigits) for i in range(stringLength)))
+    def get_cilindraje(self):
+        return self.cilindraje
 
-for i in get_random_alphaNumeric_string(13):
-    i = get_random_alphaNumeric_string(10)
-    print(i)
+    def get_marca(self):
+        return self.marca
+    
+    def get_info(self):
+        return print(f"""El vehiculo resultante es marca {self.marca} y cuenta con estas caracteristcas:
+        TIPO\t {self.tipo} 
+        FECHA\t {self.salida}
+        COLOR\t {self.color}""")
+
+produccion = Automovil("Gris","Hatchback", "Fit", "Honda",2015,5,4 )
 

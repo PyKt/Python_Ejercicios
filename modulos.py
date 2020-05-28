@@ -6,6 +6,8 @@ import string
 import time
 from io import open
 import pathlib
+from modulocoche import Coche
+from PySide2 
 
 """
 Generador automatico de contraseñas.
