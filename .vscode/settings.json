@@ -2,5 +2,21 @@
     "python.linting.pylintEnabled": false,
     "python.linting.pycodestyleEnabled": true,
     "python.linting.enabled": false,
-    "python.pythonPath": "/usr/bin/python"
+    "python.pythonPath": "/usr/bin/python",
+    "sqltools.connections": [
+        {
+            "askForPassword": false,
+            "database": "curso_python",
+            "driver": "MySQL",
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "name": "alberto",
+            "password": "fava",
+            "port": 3306,
+            "previewLimit": 50,
+            "server": "localhost",
+            "username": "alberto"
+        }
+    ]
 }

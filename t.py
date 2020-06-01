@@ -1,73 +1,95 @@
-import string
-from io import open
-import modulocoche
+from tkinter import Tk, Canvas, Frame, Label, Entry, Button, W, E, Listbox, END
 
-class Automovil:
-    color = "gris"
-    tipo = "hatchback"
-    modelo = "fit"
-    marca = "Honda"
-    puertas = 5
-    cilindraje = 1.5
-    salida = 2014
+import psycopg2
 
-    def __init__(self, color,tipo,modelo,marca,salida,puertas,cilindraje):
+root = Tk()
+root.title("Python & PosgreSQL")
 
-        self.salida = salida
-        self.cilindraje = cilindraje
-        self.puertas = puertas
-        self.color = color
-        self.tipo = tipo
-        self.marca = marca
-        self.modelo = modelo
 
-    def set_salida(self, salida):
-        self.salida = salida
+def save_new_student(name, age, address):
+    conn = psycopg2.connect(dbname="postgres", user="postgres",
+                            password="", host="localhost", port="5432")
+    cursor = conn.cursor()
+    query = '''INSERT INTO students(name, age, address) VALUES (%s, %s, %s)'''
+    cursor.execute(query, (name, age, address))
+    print("succesfully data inserted")
+    conn.commit()
+    conn.close()
+    # refresh with new students
+    display_students()
 
-    def set_modelo(self,modelo):
-        self.modelo = modelo
 
-    def set_tipo(self, tipo):
-        self.tipo = tipo
+def search(id):
+    conn = psycopg2.connect(dbname="postgres", user="postgres",
+                            password="", host="localhost", port="5432")
+    cursor = conn.cursor()
+    query = '''SELECT * FROM students where id=%s'''
+    cursor.execute(query, (id))
 
-    def set_color(self,color):
-        self.color = color
+    row = cursor.fetchone()
+    print(row)
+    display_search_result(row)
 
-    def set_puertas(self,puertas):
-        self.puertas = puertas
+    conn.commit()
+    conn.close()
 
-    def set_cilindraje(self,cilindraje):
-        self.cilindraje = cilindraje
-    
-    def set_marca(self, marca):
-        self.marca = marca
-    
-    def get_salida(self):
-        return self.salida
-    
-    def get_modelo(self):
-        return self.modelo
 
-    def get_tipo(self):
-        return self.tipo
+def display_search_result(row):
+    listbox = Listbox(frame, width=20, height=1)
+    listbox.grid(row=9, columnspan=4, sticky=W+E)
+    listbox.insert(END, row)
 
-    def get_color(self):
-        return self.color
 
-    def get_puertas(self):
-        return self.puertas
 
-    def get_cilindraje(self):
-        return self.cilindraje
+# Canva
+canvas = Canvas(root, height=380, width=400)
+canvas.pack()
 
-    def get_marca(self):
-        return self.marca
-    
-    def get_info(self):
-        return print(f"""El vehiculo resultante es marca {self.marca} y cuenta con estas caracteristcas:
-        TIPO\t {self.tipo} 
-        FECHA\t {self.salida}
-        COLOR\t {self.color}""")
+frame = Frame()
+frame.place(relx=0.1, rely=0.1, relwidth=0.8, relheight=0.8)
 
-produccion = Automovil("Gris","Hatchback", "Fit", "Honda",2015,5,4 )
+label = Label(frame, text="Add a Student")
+label.grid(row=0, column=1)
 
+# Name Input
+label = Label(frame, text="Name")
+label.grid(row=1, column=0)
+
+entry_name = Entry(frame)
+entry_name.grid(row=1, column=1)
+entry_name.focus()
+
+# Age
+label = Label(frame, text="Age")
+label.grid(row=2, column=0)
+
+entry_age = Entry(frame)
+entry_age.grid(row=2, column=1)
+
+# Address
+label = Label(frame, text="Address")
+label.grid(row=3, column=0)
+
+entry_address = Entry(frame)
+entry_address.grid(row=3, column=1)
+
+# Button
+button = Button(frame, text="Add", command=lambda: save_new_student(
+    entry_name.get(), entry_age.get(), entry_address.get()))
+button.grid(row=4, column=1, sticky=W+E)
+
+# Search
+label = Label(frame, text="Search Data")
+label.grid(row=5, column=1)
+
+label = Label(frame, text="Search By ID")
+label.grid(row=6, column=0)
+
+id_search = Entry(frame)
+id_search.grid(row=6, column=1)
+
+button = Button(frame, text="Search", command=lambda: search(id_search.get()))
+button.grid(row=6, column=2)
+
+
+root.mainloop()

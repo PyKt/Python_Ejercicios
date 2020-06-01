@@ -7,7 +7,10 @@ import time
 from io import open
 import pathlib
 from modulocoche import Coche
-from PySide2 
+from tkinter import Tk
+
+ventana = Tk()
+ventana.title("Prueba")
 
 """
 Generador automatico de contraseñas.
@@ -57,4 +60,3 @@ Ecuaciones matematicas
 print('Imprimimos el valor de pi', math.pi)
 print('La Raiz cuadrada de un numero', math.sqrt(20))
 print("Redondeo de numero: ", math.floor(32.12832039))
-
