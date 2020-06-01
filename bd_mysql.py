@@ -7,7 +7,6 @@ database = mysql.connector.connect(
     user="alberto",
     password="fava",
     database="curso_python"
-
 )
 
 cursor = database.cursor(buffered=True)
@@ -52,7 +51,7 @@ database.commit()
 
 # Parametros SELET
 
-cursor.execute ("SELECT * FROM vehiculo")
+cursor.execute("SELECT * FROM vehiculo")
 result = cursor.fetchall()
 
 for inventario in result:
@@ -64,9 +63,14 @@ print(result)
 
 borrador = input("escriba la marca a borrar: \n")
 
-#Registro borrados
+# Registro borrados
 
 cursor.execute(f"DELETE FROM vehiculo WHERE marca = '{borrador}'")
 database.commit()
 
 print(cursor.rowcount, "borrados")
+
+# Actualizar datos y colunmas
+
+cursor.execute("UPDATE vehiculo SET modelo='Civic' WHERE marca='Honda'")
+database.commit()
